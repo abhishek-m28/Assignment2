@@ -17,4 +17,14 @@ public class CaesarTest {
     void testEmptyCipher() {
         assertEquals("", caesarCipher.cipher("", 7));
     }
+
+    @Test
+    void testDecryptOffset2(){
+        assertEquals("abhishekmohabe", caesarCipher.decrypt("cdjkujgmoqjcdg", 2));
+    }
+
+    @Test
+    void testDecryptEmpty(){
+        assertEquals("", caesarCipher.decrypt("", 2));
+    }
 }

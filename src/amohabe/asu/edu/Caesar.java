@@ -1,5 +1,7 @@
 package amohabe.asu.edu;
 
+import java.util.ArrayList;
+
 public class Caesar {
 
     private static final char CHARA = 'a';
@@ -30,6 +32,11 @@ public class Caesar {
             return (char) (ch - LETTERSIZE);
         }
         return ch;
+    }
+
+    public static String decrypt(String input, int offset) {
+
+        return "a";
     }
 
     public static void main(String[] args) {
