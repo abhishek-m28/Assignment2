@@ -1,7 +1,5 @@
 package amohabe.asu.edu;
 
-import java.util.ArrayList;
-
 public class Caesar {
 
     private static final char CHARA = 'a';
@@ -36,7 +34,38 @@ public class Caesar {
 
     public static String decrypt(String input, int offset) {
 
-        return "a";
+        String letters = "abcdefghijklmnopqrstuvwxyz";
+        char rVal;
+        String result = "";
+        int cPos, value;
+
+        for(int i = 0; i < input.length(); i++){
+            switch(input.charAt(i)){
+
+                case '!': result += "!";
+                    break;
+                case '?': result += "?";
+                    break;
+                case ' ': result += ' ';
+                    break;
+                case '.': result += '.';
+                    break;
+                case ',': result += ",";
+                    break;
+
+                default: cPos = letters.indexOf(input.charAt(i));
+                    value = (cPos - offset) % 26;
+
+                    if(value < 0){
+                        value = letters.length() + value;
+                    }
+
+                    rVal = letters.charAt(value);
+                    result += rVal;
+                    break;
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {

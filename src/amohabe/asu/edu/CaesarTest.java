@@ -10,11 +10,13 @@ public class CaesarTest {
 
     @Test
     void testCipherTextOffset2() {
+
         assertEquals("cdjkujgmoqjcdg", caesarCipher.cipher("abhishekmohabe", 2));
     }
 
     @Test
     void testEmptyCipher() {
+
         assertEquals("", caesarCipher.cipher("", 7));
     }
 
